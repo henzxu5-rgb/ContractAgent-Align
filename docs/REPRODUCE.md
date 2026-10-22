@@ -51,7 +51,7 @@ python -m contract_agent.training dpo --data contract_agent/artifacts/datasets/a
 
 ## 4. 重新生产教师/Judge 数据
 
-需要模型 API。凭据仅放本地环境变量，格式参考 `.env.example`；不要提交真实 `.env`。API 生产、训练和推理需要明确的新 run ID、预算与技术验收，不在浏览网页时自动启动。项目中的云端编排脚本为特定实验恢复工具，不是体验入口。
+需要模型 API。凭据仅放本地环境变量，格式参考 `.env.example`；不要提交真实 `.env`。API 生产、训练和推理需要明确的新 run ID、预算与技术验收，不在浏览网页时自动启动。
 
 教师服务名称和 API 响应按当时返回记录保存。服务端别名及中断后的随机流会变化，因此不能保证重新采样逐字相同。公开材料保留实际候选、续跑、原始与交换后 Judge 判定，供直接核验。
 
@@ -59,4 +59,4 @@ python -m contract_agent.training dpo --data contract_agent/artifacts/datasets/a
 
 发布采用显式文件白名单，仅包括当前 ContractAgent-Align 源码、文档及实验材料。凭据、账户余额响应、个人纪要、旧项目、模型缓存和优化器大文件均不进入发布目录。
 
-JSON 中的本机绝对路径改为仓库相对路径；云端登录地址移除。原始私有记录保留，公开版本另生成 `PUBLICATION_MANIFEST.json`，分别记录原始与公开文件哈希。路径整理后的文件哈希可能与原始训练 receipt 中的输入哈希不同；候选动作、评分、测试任务与参考标注不因此重算或改写。
+JSON 中的本机绝对路径改为仓库相对路径，云端登录地址已移除。路径整理后的文件哈希可能与原始训练 receipt 中的输入哈希不同；候选动作、评分、测试任务与参考标注均未重算或改写。

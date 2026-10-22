@@ -93,8 +93,6 @@ def build(conditions, root=ARTIFACTS, preference_summary_path=None, sft_summary_
     if preference:
         from .preference_audit import build as build_preference_audit
         build_preference_audit(preference_path, root)
-    from .portfolio import generate
-    generate(result, root)
     return result
 
 
